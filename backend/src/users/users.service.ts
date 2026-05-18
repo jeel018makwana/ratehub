@@ -1,4 +1,3 @@
-// src/users/users.service.ts
 import { Injectable, ConflictException, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, Like } from 'typeorm';
@@ -16,7 +15,6 @@ export class UsersService {
 
     const hashed = await bcrypt.hash(dto.password, 10);
 
-    // Fix: cast role to enum, default to USER
     const user = this.repo.create({
       name: dto.name,
       email: dto.email,

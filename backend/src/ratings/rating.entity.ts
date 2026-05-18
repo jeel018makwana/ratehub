@@ -1,4 +1,3 @@
-// src/ratings/rating.entity.ts
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { User } from '../users/user.entity';
 import { Store } from '../stores/store.entity';

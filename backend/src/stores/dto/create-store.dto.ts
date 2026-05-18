@@ -1,4 +1,3 @@
-// src/stores/dto/create-store.dto.ts
 import { IsEmail, IsString, MinLength, MaxLength, IsOptional, IsNumber } from 'class-validator';
 
 export class CreateStoreDto {

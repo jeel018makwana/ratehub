@@ -1,4 +1,3 @@
-// src/users/user.entity.ts
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn } from 'typeorm';
 import { Rating } from '../ratings/rating.entity';
 

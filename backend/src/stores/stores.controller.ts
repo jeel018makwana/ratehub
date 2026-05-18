@@ -1,4 +1,3 @@
-// src/stores/stores.controller.ts
 import { Controller, Get, Post, Body, Param, Query, UseGuards } from '@nestjs/common';
 import { StoresService } from './stores.service';
 import { CreateStoreDto } from './dto/create-store.dto';

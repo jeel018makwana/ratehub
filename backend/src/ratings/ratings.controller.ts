@@ -1,4 +1,3 @@
-// src/ratings/ratings.controller.ts
 import { Controller, Post, Body, Get, Param, UseGuards, Request } from '@nestjs/common';
 import { RatingsService } from './ratings.service';
 import { CreateRatingDto } from './dto/create-rating.dto';

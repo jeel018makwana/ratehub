@@ -1,4 +1,3 @@
-// src/users/users.controller.ts
 import { Controller, Get, Post, Body, Param, Patch, Query, UseGuards, Request } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -11,13 +10,11 @@ import { Roles } from '../auth/roles.decorator';
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
-  // Public signup
   @Post('signup')
   signup(@Body() dto: CreateUserDto) {
     return this.usersService.create(dto);
   }
 
-  // Admin: create any user
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin')
   @Post()
@@ -25,7 +22,6 @@ export class UsersController {
     return this.usersService.create(dto);
   }
 
-  // Admin: list all users with filters
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin')
   @Get()
@@ -33,7 +29,7 @@ export class UsersController {
     return this.usersService.findAll(query);
   }
 
-  // Admin: user details
+
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin')
   @Get(':id')
@@ -41,7 +37,6 @@ export class UsersController {
     return this.usersService.findOne(+id);
   }
 
-  // Logged-in user: update own password
   @UseGuards(JwtAuthGuard)
   @Patch('me/password')
   updatePassword(@Request() req, @Body() dto: UpdatePasswordDto) {
